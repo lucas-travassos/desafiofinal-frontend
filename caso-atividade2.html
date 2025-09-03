@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estrutura CASO-Atividade2</title>
+  <meta name="description" content="Atividades da Estrutura CASO em JavaScript">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO  MENU (igual ao index) -->
+  <header class="topo">
+    <nav class="menu">
+      <a href="index.html" class="link">Página inicial</a>
+
+      <button type="button" class="gatilho" data-sub="sub-cond">Estruturas condicionais</button>
+      <ul id="sub-cond" class="submenu">
+        <li><a href="estruturase.html" class="link">Estrutura SE</a></li>
+        <li><a href="estruturacaso.html" class="link">Estrutura CASO</a></li>
+      </ul>
+
+      <button type="button" class="gatilho" data-sub="sub-rep">Estruturas de repetição</button>
+      <ul id="sub-rep" class="submenu">
+        <li><a href="para.html" class="link">Estrutura PARA</a></li>
+        <li><a href="enquanto.html" class="link">Estrutura ENQUANTO</a></li>
+        <li><a href="facaenquanto.html" class="link">Estrutura FAÇA-ENQUANTO</a></li>
+      </ul>
+
+      <button type="button" class="gatilho" data-sub="sub-vet">Vetores</button>
+      <ul id="sub-vet" class="submenu">
+        <li><a href="vetores1d.html" class="link">Vetores Unidimensionais</a></li>
+        <li><a href="vetores2d.html" class="link">Vetores Bidimensionais</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="principal" style="background-image: url('img/site.jpg');">
+
+    <div class="se-container">
+      <!-- Caixa esquerda -->
+      <section class="caixa col-esq">
+        <h2 class="caixa-titulo">Estrutura CASO-Atividade2</h2>
+        <p><strong>Esta atividade propõe a criação de uma calculadora em JavaScript utilizando a estrutura condicional CASO (switch). O programa valida o preenchimento dos campos, realiza operações básicas (soma, subtração, multiplicação e divisão), impede a divisão por zero e exibe no console o resultado, informando também se ele é par ou ímpar.</strong></p>
+        <br>
+        <p><strong>Utilize console.log (Ctrl+Shift+J) para visualizar os resultados</strong></p>
+      </section>
+
+      <!-- Caixa direita (atividades) -->
+      <section class="caixa col-dir">
+        <!--Inserindo o código da atividade + botão de execução-->
+        <center>
+          <form>
+            <br>
+            <textarea name="fonte" cols="95" rows="25">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Estrutura CASO JavaScript - Atividade 2</title>
+  <style>
+    /*Configurações gerais*/
+    section {
+      margin-top: 0px auto;
+    }
+
+    /*Configuração da página*/
+    .cadnumint {
+      width: 300px;
+      margin: 0px auto;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .cadnumint input {
+      margin: 5px auto;
+      width: 100%;
+      padding: 5px 0;
+    }
+
+    .cadnumint button {
+      width: 30%;
+      margin: 0 10%;
+      background-color: #b1ccf5;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    label {
+      float: left;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 0px;
+      margin-bottom: 10px;
+      font-size: 50px;
+    }
+  </style>
+  <script>
+    function procFormulario() {
+      // Verifica se o primeiro número foi preenchido
+      if (document.frmnumint.txtnumint.value == "") {
+        alert("Preencha o primeiro número");
+        document.frmnumint.txtnumint.focus();
+        return false;
+      }
+
+      // Verifica se o segundo número foi preenchido
+      else if (document.getElementById('numint2').value == "") {
+        alert("Preencha o segundo número");
+        document.getElementById('numint2').focus();
+        return false;
+      }
+
+      // Verifica se a operação foi preenchida
+      else if (document.getElementById('op').value == "") {
+        alert("Preencha a operação");
+        document.getElementById('op').focus();
+        return false;
+      }
+
+      else {
+        // Captura os valores e a operação
+        let numint = parseInt(document.getElementById('numint').value);
+        let numint2 = parseInt(document.getElementById('numint2').value);
+        let op = document.getElementById('op').value;
+        let resultado;
+
+        switch (op) {
+          case "+":
+            resultado = numint + numint2;
+            console.log("Operação escolhida: Soma");
+          break;
+
+          case "-":
+            resultado = numint - numint2;
+            console.log("Operação escolhida: Subtração");
+          break;
+
+          case "*":
+            resultado = numint * numint2;
+            console.log("Operação escolhida: Multiplicação");
+          break;
+
+          case "/":
+            if (numint2 === 0) {
+              alert("Não é possível dividir por zero");
+              return false;
+            }
+            resultado = numint / numint2;
+            console.log("Operação escolhida: Divisão");
+          break;
+
+          default:
+            console.log("Selecione uma operação válida: +, -, *, /");
+            return false;
+        }
+
+        console.log("Primeiro número: " + numint);
+        console.log("Segundo número: " + numint2);
+        console.log("Resultado: " + resultado);
+        if (resultado % 2 === 0) {
+          console.log("O resultado é par");
+        } else {
+          console.log("O resultado é ímpar");
+        }
+        return false;
+      }
+    }
+  </script>
+</head>
+<body>
+  <section>
+    <h2> Estruturas Caso (Switch() - Atividade 2)</h2>
+    <font face="arial">
+      <form name="frmnumint" action="#" method="get" onsubmit="return procFormulario()">
+        <fieldset class="cadnumint">
+          <legend>Entrada de dados</legend>
+          <br>
+          <label for="numint">Informe o primeiro número:</label>
+          <input type="text" name="txtnumint" id="numint"><br><br>
+
+          <label for="numint2">Informe o segundo número:</label>
+          <input type="text" name="txtnumint2" id="numint2"><br><br>
+
+          <label for="op">Informe a operação desejada (+, -, /, *):</label>
+          <input type="text" name="txtoperacao" id="op"><br><br>
+
+          <button type="reset">Limpar</button><button type="submit">Enviar</button>
+        </fieldset>
+      </form>
+    </font>
+  </section>
+</body>
+</html>
+            </textarea>
+            <br><br>
+            <input type="button" value="Testar sua página" onclick="document.write(fonte.value);">
+          </form>
+        </center>
+      </section>
+    </div>
+
+    <div style="clear: both;"></div>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <p>By ADS SENAI - Lucas Eduardo Travassos Machado</p>
+  </footer>
+
+  <!-- JS simples para abrir/fechar submenus e atividades -->
+  <script>
+    (function () {
+      var botoes = document.getElementsByClassName('gatilho');
+      for (var i = 0; i < botoes.length; i++) {
+        botoes[i].onclick = function () {
+          var id = this.getAttribute('data-sub');
+          if (!id) return;
+          var alvo = document.getElementById(id);
+          if (!alvo) return;
+          alvo.style.display = (alvo.style.display === 'block') ? 'none' : 'block';
+        };
+      }
+    })();
+  </script>
+</body>
+</html>

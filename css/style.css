@@ -1,0 +1,221 @@
+.principal {
+  min-height: 70vh; /* um pouco mais de respiro na index */
+  padding: 50px 15px 60px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo {
+  font-size: 42px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Subtítulo como container de apresentação */
+.principal .subtitulo {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 18px 22px;
+  background: rgba(233, 242, 250, 0.92); /* caixa clara com leve transparência */
+  color: #1E3A5F;
+  border-radius: 10px;
+  border: 1px solid #8EC5F5;
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 500;
+  text-align: justify;
+  box-shadow: 0 6px 16px rgba(14, 30, 50, 0.25);
+}
+
+.principal .subtitulo em {
+  font-style: italic;
+  color: inherit;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .titulo {
+    font-size: 32px;
+  }
+  .principal .subtitulo {
+    font-size: 16px;
+    padding: 14px 16px;
+  }
+}
+
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Century Gothic", Arial, sans-serif;
+  color: #FFFFFF;
+  background: #1E3A5F; /* fundo geral mais escuro, combina com a foto */
+}
+
+/* Cabeçalho / Menu */
+.topo {
+  background: #1E3A5F;
+  padding: 10px 0;
+}
+
+.menu {
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* Links e botões do menu */
+.link,
+.gatilho {
+  display: inline-block;
+  background: #8EC5F5;
+  color: #0B2239; /* contraste legível sobre o azul claro */
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  padding: 8px 12px;
+  margin: 5px 5px 0 0;
+  cursor: pointer;
+}
+
+.link.pequeno {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+/* Submenus escondidos por padrão */
+.submenu {
+  display: none;
+  list-style: none;
+  margin: 5px 0 10px 0;
+  padding: 0;
+  background: #E9F2FA;
+}
+
+.submenu li {
+  border-top: 1px solid #1E3A5F;
+}
+
+.submenu li:first-child { border-top: none; }
+
+.submenu .link {
+  display: block;
+  background: #E9F2FA;
+  color: #1E3A5F;
+  padding: 8px 12px;
+  margin: 0;
+}
+
+/* Área principal com imagem de fundo definida no HTML */
+.principal {
+  min-height: 60vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 30px 10px 40px 10px;
+  text-align: center;
+}
+
+.titulo {
+  margin: 0 0 10px 0;
+  font-size: 34px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-shadow: 0 0 2px #0B2239; /* leve contraste */
+}
+
+.subtitulo {
+  margin: 0;
+  font-size: 16px;
+  color: #E9F2FA;
+}
+
+/* ===== Página: Estrutura SE ===== */
+
+.se-container {
+  width: 95%;
+  margin: 0 auto;
+  text-align: left; /* conteúdo das caixas à esquerda/direita */
+}
+
+/* Caixas lado a lado usando float */
+.caixa {
+  background: #E9F2FA;
+  color: #1E3A5F;
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 220px;
+  margin-top: 10px;
+}
+
+.col-esq { float: left;  width: 30%; }
+.col-dir { float: right; width: 60%; }
+
+.caixa-titulo {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  color: #1E3A5F;
+}
+
+/* Atividades: caixas que abrem/fecham */
+.atividade {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 6px 0;
+  background: #8EC5F5;
+  color: #0B2239;
+  border: none;
+  padding: 8px 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.atividade-box {
+  display: none; /* abre no clique */
+  background: #FFFFFF;
+  color: #1E3A5F;
+  border: 1px solid #1E3A5F;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin: 6px 0 12px 0;
+}
+
+.atividade-box p {
+  margin: 6px 0;
+}
+
+/* Rodapé simples */
+.rodape {
+  background: #1E3A5F;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  clear: both; /* garante que o rodapé baixe abaixo das colunas */
+}
+
+/* Ajuste simples para telas menores (empilha as caixas) */
+@media (max-width: 800px) {
+  .col-esq, .col-dir { float: none; width: 100%; }
+}
+
+/* Botão "Testar sua página" */
+input[type="button"] {
+  display: block;
+  margin: 10px auto 15px auto;
+  background-color: #8EC5F5;
+  color: #0B2239;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+input[type="button"]:hover {
+  background-color: #6FB2EE; /* tom um pouco mais escuro no hover */
+}

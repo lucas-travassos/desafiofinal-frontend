@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura FACA-ENQUANTO-Atividade3</title>
+    <meta name="description" content="Atividades da Estrutura FACA-ENQUANTO em JavaScript">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO  MENU (igual ao index) -->
+    <header class="topo">
+        <nav class="menu">
+            <a href="index.html" class="link">Página inicial</a>
+
+            <button type="button" class="gatilho" data-sub="sub-cond">Estruturas condicionais</button>
+            <ul id="sub-cond" class="submenu">
+                <li><a href="estruturase.html" class="link">Estrutura SE</a></li>
+                <li><a href="estruturacaso.html" class="link">Estrutura CASO</a></li>
+            </ul>
+
+            <button type="button" class="gatilho" data-sub="sub-rep">Estruturas de repetição</button>
+            <ul id="sub-rep" class="submenu">
+                <li><a href="para.html" class="link">Estrutura PARA</a></li>
+                <li><a href="enquanto.html" class="link">Estrutura ENQUANTO</a></li>
+                <li><a href="facaenquanto.html" class="link">Estrutura FAÇA-ENQUANTO</a></li>
+            </ul>
+
+            <button type="button" class="gatilho" data-sub="sub-vet">Vetores</button>
+            <ul id="sub-vet" class="submenu">
+                <li><a href="vetores1d.html" class="link">Vetores Unidimensionais</a></li>
+                <li><a href="vetores2d.html" class="link">Vetores Bidimensionais</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="principal" style="background-image: url('img/site.jpg');">
+
+        <div class="se-container">
+            <!-- Caixa esquerda -->
+            <section class="caixa col-esq">
+                <h2 class="caixa-titulo">Estrutura FACA-ENQUANTO-Atividade3</h2>
+                <p><strong>Esta atividade utiliza a estrutura de repetição FAÇA-ENQUANTO (do...while) para simular o desempenho de três turmas de alunos. O programa gera notas aleatórias, contabiliza quantos atingiram média igual ou superior a 7 em cada turma e, ao final, calcula a média geral da escola.</strong></p>
+                <br>
+                <p><strong>Utilize console.log (Ctrl+Shift+J) para visualizar os resultados</strong></p>                
+             
+            </section>
+
+            <!-- Caixa direita (atividades) -->
+            <section class="caixa col-dir">
+                <!--Inserindo o código da atividade + botão de execução-->
+                <center>
+                    <form>
+                        <br>
+                        <textarea name="fonte" cols="95" rows="25">                          
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3 - Do While</title>
+    <style>/*Configurações gerais*/
+
+        section{
+        
+            margin: 0 auto;
+        }
+        
+        /*Configuração da página*/
+        
+        .cadinteiro{
+        
+            width: 300px;
+            margin: 0px auto;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .cadinteiro input{
+        
+            margin: 5px auto;
+            width: 100%;
+            padding: 5px 0;
+        }
+        
+        .cadinteiro button{
+        
+            width: 30%;
+            margin: 0 10%;
+            background-color: #b1ccf5;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        label{
+        
+            float: left;
+        }
+        
+        h2{
+        
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-size: 50px;
+        }</style>
+    <script >function validaProc() {
+        // Verifica se o campo está vazio
+        if (
+            document.getElementById('numint').value == "" || 
+            document.getElementById('numint2').value == "" ||
+            document.getElementById('numint3').value == ""
+        ) {
+            alert("Preencha todos os campos");
+            document.getElementById('numint').focus();
+            return false;
+        } else {
+    
+            let numint = parseFloat(document.getElementById('numint').value);
+            let numint2 = parseFloat(document.getElementById('numint2').value);
+            let numint3 = parseFloat(document.getElementById('numint3').value);
+            let turma1 = 0;
+            let turma2 = 0;   
+            let turma3 = 0;
+            let somaturmas = 0;
+            let mediageral;        
+    
+            console.log("TURMA 1");  
+            let i = 1;
+            do {
+                let num = parseFloat((Math.random() * 10).toFixed(2));
+                somaturmas += num;  
+                console.log("Média aluno " + i + " = " + num);    
+                if (num >= 7) {
+                    turma1++;
+                }
+                i++;
+            } while (i <= numint);
+            console.log("Qtde de alunos com média igual ou superior a 7 = " + turma1);   
+            console.log("");
+    
+            console.log("TURMA 2");
+            i = 1;
+            do {
+                let num = parseFloat((Math.random() * 10).toFixed(2));
+                somaturmas += num;      
+                console.log("Média aluno " + i + " = " + num);
+                if (num >= 7) {
+                    turma2++;
+                }
+                i++;
+            } while (i <= numint2);
+            console.log("Qtde de alunos com média igual ou superior a 7 = " + turma2);
+            console.log("");
+    
+            console.log("TURMA 3");
+            i = 1;
+            do {
+                let num = parseFloat((Math.random() * 10).toFixed(2));
+                somaturmas += num;      
+                console.log("Média aluno " + i + " = " + num);
+                if (num >= 7) {
+                    turma3++;
+                }
+                i++;
+            } while (i <= numint3);
+            console.log("Qtde de alunos com média igual ou superior a 7 = " + turma3);
+            console.log("");
+        
+            mediageral = somaturmas / (numint + numint2 + numint3);
+            console.log("Média geral da escola = " + mediageral.toFixed(2));
+            console.log("");   
+    
+            return false;
+        }    
+    }
+    </script>
+</head>
+
+<body>
+
+    <section>
+
+        <h2>Atividade 3 - Do While</h2>
+        <font face = "arial">
+                
+            
+            <form name="frmnumint" action="#" method="get" onsubmit="return validaProc()">
+
+                <fieldset class="cadinteiro">
+
+                    <legend>Digite o total de alunos por turma</legend>
+                    <br>
+
+                    <label for="numint">turma 1</label>
+                    <input type="text" name="txtnumint" id="numint"><br><br>
+
+                    <label for="numint">turma 2</label>
+                    <input type="text" name="txtnumint2" id="numint2"><br><br>
+                    
+                    <label for="numint">turma 3</label>
+                    <input type="text" name="txtnumint3" id="numint3"><br><br>                    
+
+                    <button type="reset">Limpar</button><button type="submit">Enviar</button>
+
+                </fieldset>
+
+            </form>   
+
+        </font>
+
+    </section>
+
+
+</body>
+</html>
+                            
+                                                       
+                            
+                            
+                        </textarea>
+                        <br><br>
+                        <input type="button" value="Testar sua página" onclick="document.write(fonte.value);">
+                    </form>
+                </center>
+            </section>
+        </div>
+
+        <div style="clear: both;"></div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+        <p>By ADS SENAI - Lucas Eduardo Travassos Machado</p>
+    </footer>
+
+    <!-- JS simples para abrir/fechar submenus e atividades -->
+    <script>
+        (function () {
+            var botoes = document.getElementsByClassName('gatilho');
+            for (var i = 0; i < botoes.length; i++) {
+                botoes[i].onclick = function () {
+                    var id = this.getAttribute('data-sub');
+                    if (!id) return;
+                    var alvo = document.getElementById(id);
+                    if (!alvo) return;
+                    alvo.style.display = (alvo.style.display === 'block') ? 'none' : 'block';
+                };
+            }
+        })();
+    </script>
+</body>
+
+</html>

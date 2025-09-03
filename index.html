@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Inicial</title>
+  <meta name="description" content="Repositório de atividades em HTML, CSS e JavaScript">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO / MENU -->
+  <header class="topo">
+    <nav class="menu">
+      <a href="index.html" class="link">Página inicial</a>
+
+      <!-- Estruturas condicionais -->
+      <button type="button" class="gatilho" data-sub="sub-cond">Estruturas condicionais</button>
+      <ul id="sub-cond" class="submenu">
+        <li><a href="estruturase.html" class="link">Estrutura SE</a></li>
+        <li><a href="estruturacaso.html" class="link">Estrutura CASO</a></li>
+      </ul>
+
+      <!-- Estruturas de repetição -->
+      <button type="button" class="gatilho" data-sub="sub-rep">Estruturas de repetição</button>
+      <ul id="sub-rep" class="submenu">
+        <li><a href="para.html" class="link">Estrutura PARA</a></li>
+        <li><a href="enquanto.html" class="link">Estrutura ENQUANTO</a></li>
+        <li><a href="facaenquanto.html" class="link">Estrutura FAÇA-ENQUANTO</a></li>
+      </ul>
+
+      <!-- Vetores -->
+      <button type="button" class="gatilho" data-sub="sub-vet">Vetores</button>
+      <ul id="sub-vet" class="submenu">
+        <li><a href="vetores1d.html" class="link">Vetores Unidimensionais</a></li>
+        <li><a href="vetores2d.html" class="link">Vetores Bidimensionais</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="principal" style="background-image: url(img/site.jpg);">
+    <h1 class="titulo">PÁGINA INCIAL</h1>
+    <h2 class="subtitulo"><em>"Este site é um repositório de atividades em JavaScript desenvolvido durante o curso de ADS no SENAI. Aqui você encontrará exemplos práticos de estruturas condicionais, laços de repetição e manipulação de vetores (uni e bidimensionais). O objetivo é reunir, em um só lugar, exercícios comentados e organizados para facilitar o estudo, a prática e a revisão dos principais conceitos de lógica de programação em JavaScript."</em></h2>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <p>By: ADS SENAI - Lucas Eduardo Travassos Machado</p>
+  </footer>
+
+  <!-- JS bem simples para abrir/fechar submenus -->
+  <script>
+    (function () {
+      var botoes = document.getElementsByClassName('gatilho');
+      for (var i = 0; i < botoes.length; i++) {
+        botoes[i].onclick = function () {
+          var id = this.getAttribute('data-sub');
+          var sub = document.getElementById(id);
+          if (sub.style.display === 'block') {
+            sub.style.display = 'none';
+          } else {
+            sub.style.display = 'block';
+          }
+        };
+      }
+    })();
+  </script>
+
+</body>
+</html>

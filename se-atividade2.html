@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estrutura SE-Atividade2</title>
+  <meta name="description" content="Atividades da Estrutura SE em JavaScript">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO  MENU (igual ao index) -->
+  <header class="topo">
+    <nav class="menu">
+      <a href="index.html" class="link">Página inicial</a>
+
+      <button type="button" class="gatilho" data-sub="sub-cond">Estruturas condicionais</button>
+      <ul id="sub-cond" class="submenu">
+        <li><a href="estruturase.html" class="link">Estrutura SE</a></li>
+        <li><a href="estruturacaso.html" class="link">Estrutura CASO</a></li>
+      </ul>
+
+      <button type="button" class="gatilho" data-sub="sub-rep">Estruturas de repetição</button>
+      <ul id="sub-rep" class="submenu">
+        <li><a href="para.html" class="link">Estrutura PARA</a></li>
+        <li><a href="enquanto.html" class="link">Estrutura ENQUANTO</a></li>
+        <li><a href="facaenquanto.html" class="link">Estrutura FAÇA-ENQUANTO</a></li>
+      </ul>
+
+      <button type="button" class="gatilho" data-sub="sub-vet">Vetores</button>
+      <ul id="sub-vet" class="submenu">
+        <li><a href="vetores1d.html" class="link">Vetores Unidimensionais</a></li>
+        <li><a href="vetores2d.html" class="link">Vetores Bidimensionais</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="principal" style="background-image: url('img/site.jpg');">
+
+    <div class="se-container">
+      <!-- Caixa esquerda -->
+      <section class="caixa col-esq">
+        <h2 class="caixa-titulo">Estrutura SE-Atividade2</h2>
+        <p>
+          <strong>
+            Esta atividade propõe a criação de um formulário em JavaScript que lê dois números e verifica qual deles é maior, ou se são iguais. O programa valida o preenchimento dos campos e exibe uma mensagem de acordo com o resultado da comparação.
+          </strong>
+        </p>
+      </section>
+
+      <!-- Caixa direita (atividades) -->
+      <section class="caixa col-dir">
+        <!--Inserindo o código da atividade + botão de execução-->
+        <center>
+          <form>
+            <br>
+            <textarea name="fonte" cols="95" rows="25">
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title> Estrutura SE/SENAO JavaScript</title>
+  <style>
+    /*Configurações gerais*/
+    section {
+      margin-top: 0px auto;
+    }
+
+    /*Configuração da página*/
+    .cadmedialuno1 {
+      width: 300px;
+      margin: 0px auto;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .cadmedialuno1 input {
+      margin: 5px auto;
+      width: 100%;
+      padding: 5px 0;
+    }
+
+    .cadmedialuno1 button {
+      width: 30%;
+      margin: 0 10%;
+      background-color: #b1ccf5;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    label {
+      float: left;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 0px;
+      margin-bottom: 10px;
+      font-size: 50px;
+    }
+  </style>
+  <script>
+    function procFormulario() {
+      //Validação de campos
+      if (document.frmnotas.txtnum1.value=="") {
+        alert("Preencha o campo Número 1");
+        document.frmnotas.txtnum1.focus();
+        return false;   
+      } else if (document.frmnotas.txtnum2.value=="") {
+        alert("Preencha o campo Nota 2");
+        document.frmnotas.txtnum2.focus();
+        return false;   
+      } else {
+        //Processamento do programa...
+        let primeironumero = parseFloat(document.getElementById('num1').value);
+        let segundonumero = parseFloat(document.getElementById('num2').value);
+        if (primeironumero > segundonumero) {
+          alert("Primeiro número é maior que o segundo")
+        } else if (segundonumero > primeironumero) {
+          alert("Segundo número é maior que o primeiro")
+        } else {
+          alert("Primeiro número é igual ao segundo")
+        }
+      }        
+    }
+  </script>
+</head>
+<body>
+  <section>
+    <h2>Atividade - Ler 2 números...Estrutura condicional "se"(if)</h2>
+    <font face="arial">
+      <form name="frmnotas" action="#" method="get" onsubmit="return procFormulario()">
+        <fieldset class="cadmedialuno1">
+          <legend>Entrada de dados</legend>
+          <br>
+          <label for="num1">Número 1:</label>
+          <input type="text" name="txtnum1" id="num1">
+          <br><br>
+          <label for="num2">Número 2:</label>
+          <input type="text" name="txtnum2" id="num2">
+          <br><br>
+          <button type="reset">Limpar</button><button type="submit">Enviar</button>
+        </fieldset>
+      </form>
+    </font>
+  </section>
+</body>
+</html>
+            </textarea>
+            <br><br>
+            <input type="button" value="Testar sua página" onclick="document.write(fonte.value);">
+          </form>
+        </center>
+      </section>
+    </div>
+
+    <div style="clear: both;"></div>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <p>By ADS SENAI - Lucas Eduardo Travassos Machado</p>
+  </footer>
+
+  <!-- JS simples para abrir/fechar submenus e atividades -->
+  <script>
+    (function () {
+      var botoes = document.getElementsByClassName('gatilho');
+      for (var i = 0; i < botoes.length; i++) {
+        botoes[i].onclick = function () {
+          var id = this.getAttribute('data-sub');
+          if (!id) return;
+          var alvo = document.getElementById(id);
+          if (!alvo) return;
+          alvo.style.display = (alvo.style.display === 'block') ? 'none' : 'block';
+        };
+      }
+    })();
+  </script>
+</body>
+</html>
